@@ -19,6 +19,16 @@ const COMPANY_VENTURES = [
     badge: "Emerging Tech & Satellite"
   },
   {
+    id: "sp",
+    title: "Opal SP",
+    tagline: "Turnkey Mega-Projects & Strategic Consultancy · Saudi Arabia",
+    logo: "assets/logo-sp.png",
+    fallbackLogo: "https://opal-sp.com/favicon.png",
+    description: "Operating in alignment with Saudi Vision 2030, Opal Strategic Partners develops, structures, and delivers large-scale turnkey megaprojects across LEO Satellite Networks, AI Technologies, Data Centers, Modular Construction Systems, Healthcare, Hospitality, Agriculture, and Sustainable Energy.",
+    website: "https://opal-sp.com/",
+    badge: "Saudi Vision 2030 & Megaprojects"
+  },
+  {
     id: "sg",
     title: "Opal SG",
     tagline: "Innovation Hub · Southeast Asia",
@@ -27,16 +37,6 @@ const COMPANY_VENTURES = [
     description: "Anchored in Singapore, Opal SG serves as the conglomerate's high-velocity innovation gateway and venture advisory platform, linking Southeast Asian capital markets with global technology breakthroughs.",
     website: "https://www.opal-sg.com/",
     badge: "Venture Innovation"
-  },
-  {
-    id: "grp",
-    title: "Opal Group",
-    tagline: "Management & Strategic Advisory",
-    logo: "assets/logo-grp.png",
-    fallbackLogo: "https://static.wixstatic.com/media/e5c5f1_b2ede517abe649688e2164e58b289dd3~mv2.png",
-    description: "A premier multinational management and financial advisory conglomerate. Providing sovereign-level consultancy, cross-border M&A governance, and corporate structuring across the GCC, Africa, and Asia.",
-    website: "https://www.opal-gp.com/home",
-    badge: "Global Advisory"
   },
   {
     id: "mining",
@@ -49,33 +49,25 @@ const COMPANY_VENTURES = [
     badge: "Gold & Resources"
   },
   {
-    id: "global",
-    title: "Global Opal",
-    tagline: "Infrastructure, Energy & Civil Works",
+    id: "trading-qatar",
+    title: "Opal Trading Qatar",
+    tagline: "Trading, Infrastructure & Energy · Qatar",
     logo: "assets/logo-global.png",
     fallbackLogo: "https://static.wixstatic.com/media/e5c5f1_1d82cb7eaf9142c5b40d925154bb3ccc~mv2.png",
-    description: "Qatar-headquartered infrastructure and engineering powerhouse, executing critical civil infrastructure, power distribution networks, and industrial development projects across the Middle East.",
+    description: "Qatar-headquartered infrastructure, commodity trading, and engineering powerhouse, executing critical civil infrastructure, power distribution networks, and industrial development projects across the Middle East.",
     website: "http://www.opalglobal-qatar.com/",
-    badge: "Sovereign Infrastructure"
+    badge: "Trading & Infrastructure"
   },
   {
-    id: "sp",
-    title: "Opal SP",
-    tagline: "Turnkey Mega-Projects & Strategic Consultancy · Saudi Arabia",
-    logo: "assets/logo-sp.png",
-    fallbackLogo: "https://opal-sp.com/favicon.png",
-    description: "Operating in alignment with Saudi Vision 2030, Opal Strategic Partners develops, structures, and delivers large-scale turnkey megaprojects across LEO Satellite Networks, AI Technologies, Data Centers, Modular Construction Systems, Healthcare, Hospitality, Agriculture, and Sustainable Energy.",
-    website: "https://opal-sp.com/",
-    badge: "Saudi Vision 2030 & Megaprojects"
+    id: "management-turkey",
+    title: "Opal Management Turkey",
+    tagline: "Management & Strategic Advisory · Turkey",
+    logo: "assets/logo-grp.png",
+    fallbackLogo: "https://static.wixstatic.com/media/e5c5f1_b2ede517abe649688e2164e58b289dd3~mv2.png",
+    description: "Premier multinational management and strategic consultancy in Turkey. Providing sovereign-level advisory, cross-border M&A governance, and corporate structuring across Turkey, the Middle East, and Europe.",
+    website: "https://tr.opal-gp.com/",
+    badge: "Management Advisory"
   }
-];
-
-const DIRECT_LINES = [
-  { city: "Dubai", country: "United Arab Emirates", flag: "🇦🇪", tz: "Asia/Dubai", tzCode: "GST", number: "+971 50 960 1323", raw: "+971509601323", primary: true },
-  { city: "Doha", country: "Qatar", flag: "🇶🇦", tz: "Asia/Qatar", tzCode: "AST", number: "+974 3396 1119", raw: "+97433961119", primary: false },
-  { city: "Beirut", country: "Lebanon", flag: "🇱🇧", tz: "Asia/Beirut", tzCode: "EET", number: "+961 79 139 129", raw: "+96179139129", primary: false },
-  { city: "Istanbul", country: "Turkey", flag: "🇹🇷", tz: "Europe/Istanbul", tzCode: "TRT", number: "+90 538 849 9119", raw: "+905388499119", primary: false },
-  { city: "Khartoum", country: "Sudan", flag: "🇸🇩", tz: "Africa/Khartoum", tzCode: "CAT", number: "+249 99 195 9595", raw: "+249991959595", primary: false }
 ];
 
 // ==========================================
@@ -110,31 +102,7 @@ function toggleTheme() {
 }
 
 // ==========================================
-// 3. LIVE WORLD CLOCKS
-// ==========================================
-
-function updateWorldClocks() {
-  DIRECT_LINES.forEach((line, index) => {
-    const el = document.getElementById(`tz-clock-${index}`);
-    if (!el) return;
-    try {
-      const now = new Date();
-      const formatter = new Intl.DateTimeFormat('en-US', {
-        timeZone: line.tz,
-        hour: 'numeric',
-        minute: 'numeric',
-        hour12: true
-      });
-      const timeStr = formatter.format(now);
-      el.textContent = `${timeStr} (${line.tzCode})`;
-    } catch (e) {
-      el.textContent = line.tzCode;
-    }
-  });
-}
-
-// ==========================================
-// 4. TOAST NOTIFICATIONS
+// 3. TOAST NOTIFICATIONS
 // ==========================================
 
 let toastTimeout = null;
@@ -176,9 +144,9 @@ function fallbackCopy(text, label) {
   textArea.select();
   try {
     document.execCommand('copy');
-    showToast(`Copied ${label || 'number'}: ${text}`);
+    showToast(`Copied ${label || 'text'}: ${text}`);
   } catch (err) {
-    showToast(`Direct Line: ${text}`);
+    showToast(`${label ? label + ': ' : ''}${text}`);
   }
   document.body.removeChild(textArea);
 }
@@ -195,18 +163,13 @@ function downloadExecutiveVCard() {
     'FN:Ahmad Chakik',
     'ORG:Opal Group;Opal World Technologies;Opal Mining Co Ltd;Opal Strategic Partners',
     'TITLE:Chairman',
-    'TEL;TYPE=CELL,VOICE,PREF:+971509601323',
-    'TEL;TYPE=WORK,VOICE:+97433961119',
-    'TEL;TYPE=WORK,VOICE:+96179139129',
-    'TEL;TYPE=WORK,VOICE:+905388499119',
-    'TEL;TYPE=WORK,VOICE:+249991959595',
     'EMAIL;TYPE=INTERNET,WORK,PREF:chakik@opal-gp.com',
     'URL;TYPE=WORK:https://www.opal-gp.com',
     'URL;TYPE=TECH:https://www.opalworldtechs.com',
     'URL;TYPE=SAUDI:https://opal-sp.com',
+    'URL;TYPE=TURKEY:https://tr.opal-gp.com',
     'ADR;TYPE=WORK:;;Office Suite;Dubai;Dubai;;United Arab Emirates',
     'NOTE:Chairman & Prominent International Business Leader across Mining, Technology, Advisory, and Sovereign Infrastructure.',
-    'X-SOCIALPROFILE;type=whatsapp:https://wa.me/971509601323',
     'REV:' + new Date().toISOString(),
     'END:VCARD'
   ].join('\r\n');
@@ -321,25 +284,7 @@ function openCompanyModal(index) {
 }
 
 // ==========================================
-// 10. CALL SELECTOR MODAL
-// ==========================================
-
-function openCallSelector(number) {
-  const targetNumber = number || '+971 50 960 1323';
-  const cleanNumber = targetNumber.replace(/[^\d+]/g, '');
-
-  document.getElementById('modalCallCellularBtn').href = `tel:${cleanNumber}`;
-  document.getElementById('modalCallWhatsappBtn').href = `https://wa.me/${cleanNumber.replace('+', '')}`;
-  document.getElementById('modalCallNumberLabel').textContent = targetNumber;
-  
-  const copyBtn = document.getElementById('modalCallCopyBtn');
-  copyBtn.onclick = () => copyToClipboard(targetNumber, 'number');
-
-  openModal('callModal');
-}
-
-// ==========================================
-// 11. LIGHTBOX PREVIEW
+// 10. LIGHTBOX PREVIEW
 // ==========================================
 
 function openLightbox(imgSrc, caption) {
@@ -353,7 +298,7 @@ function openLightbox(imgSrc, caption) {
 }
 
 // ==========================================
-// 12. BIO EXPANSION TOGGLE
+// 11. BIO EXPANSION TOGGLE
 // ==========================================
 
 function toggleBio() {
@@ -377,11 +322,9 @@ function toggleBio() {
 }
 
 // ==========================================
-// 13. INITIALIZATION ON DOM READY
+// 12. INITIALIZATION ON DOM READY
 // ==========================================
 
 document.addEventListener('DOMContentLoaded', () => {
   initTheme();
-  updateWorldClocks();
-  setInterval(updateWorldClocks, 60000); // Live clock update every minute
 });
