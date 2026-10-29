@@ -2,7 +2,7 @@
 <html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   
   <title>Ahmad Chakik | Executive Profile & Digital Card</title>
   <meta name="description" content="Official executive profile and digital card of Ahmad Chakik, Chairman of Opal Group, Opal World Technologies, and Opal Mining Co Ltd. Over three decades of leadership in investment, mining, and technology.">
@@ -12,7 +12,7 @@
   <!-- Open Graph / Social Meta -->
   <meta property="og:type" content="profile">
   <meta property="og:title" content="Ahmad Chakik — Chairman">
-  <meta property="og:description" content="Official executive profile and digital card of Ahmad Chakik, Chairman of Opal Group, Opal World Technologies, and Opal Mining Co Ltd. Over three decades of leadership in investment, mining, and technology.">
+  <meta property="og:description" content="Digital Executive Profile and Conglomerate Portfolio. Connect directly via Dubai, Qatar, Beirut, Istanbul, and Sudan direct lines.">
   <meta property="og:image" content="assets/avatar.jpg">
   <meta name="theme-color" content="#f8fafc">
 
@@ -134,7 +134,14 @@
 
         <!-- Primary Action Grid -->
         <div class="exec-actions-grid">
-          <a href="mailto:chakik@opal-gp.com" class="btn-action btn-primary-blue btn-span-all" title="Send Official Email">
+          <button class="btn-action btn-primary-blue" onclick="openCallSelector('+971 50 960 1323')" title="Call Direct Line">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            <span>Call</span>
+          </button>
+
+          <a href="mailto:chakik@opal-gp.com" class="btn-action btn-secondary-surface" title="Send Official Email">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
               <rect width="20" height="16" x="2" y="4" rx="2"/>
               <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
@@ -151,7 +158,7 @@
             <span>Website</span>
           </a>
 
-          <button class="btn-action btn-dark-save" onclick="downloadExecutiveVCard()" title="Save Contact (.vcf)">
+          <button class="btn-action btn-dark-save" onclick="downloadExecutiveVCard()" title="Save Contact to Phone">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
               <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
               <circle cx="9" cy="7" r="4"/>
@@ -160,6 +167,172 @@
             </svg>
             <span>Save vCard</span>
           </button>
+        </div>
+
+        <!-- Direct Lines & Global Hubs (Integrated into Identity Column) -->
+        <div class="direct-lines-panel" style="border-top: 1px solid var(--border-subtle);">
+          <div class="direct-lines-header">
+            <span class="direct-lines-title">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--opal-sapphire)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              Direct Lines
+            </span>
+            <span class="direct-lines-status">
+              <span class="pulse-dot"></span> Live
+            </span>
+          </div>
+
+          <!-- Dubai -->
+          <div class="direct-line-row">
+            <div class="direct-line-info">
+              <!-- UAE Flag SVG -->
+              <span class="flag-svg-icon" title="United Arab Emirates">
+                <svg viewBox="0 0 32 20" width="24" height="15" style="border-radius: 3px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.2);">
+                  <rect width="32" height="6.67" fill="#00732f"/>
+                  <rect y="6.67" width="32" height="6.67" fill="#ffffff"/>
+                  <rect y="13.33" width="32" height="6.67" fill="#000000"/>
+                  <rect width="9" height="20" fill="#ff0000"/>
+                </svg>
+              </span>
+              <div class="hub-details">
+                <span class="hub-city">Dubai, UAE</span>
+                <span class="hub-time" id="tz-clock-0">GST (UTC+4)</span>
+              </div>
+            </div>
+            <div class="phone-number-display">+971 50 960 1323</div>
+            <div class="line-action-buttons">
+              <a href="tel:+971509601323" class="line-btn call" title="Call Dubai">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </a>
+              <a href="https://wa.me/971509601323" target="_blank" rel="noopener noreferrer" class="line-btn whatsapp" title="WhatsApp Dubai">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+              </a>
+              <button class="line-btn copy" onclick="copyToClipboard('+971 50 960 1323', 'Dubai Direct Line')" title="Copy Number">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Qatar -->
+          <div class="direct-line-row">
+            <div class="direct-line-info">
+              <!-- Qatar Flag SVG -->
+              <span class="flag-svg-icon" title="Qatar">
+                <svg viewBox="0 0 32 20" width="24" height="15" style="border-radius: 3px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.2);">
+                  <rect width="32" height="20" fill="#8d1b3d"/>
+                  <path d="M0 0h10l3.5 1.11-3.5 1.11 3.5 1.11-3.5 1.11 3.5 1.11-3.5 1.11 3.5 1.11-3.5 1.11 3.5 1.11-3.5 1.11 3.5 1.11-3.5 1.11 3.5 1.11-3.5 1.11 3.5 1.11-3.5 1.11 3.5 1.11-3.5 1.11L10 20H0z" fill="#ffffff"/>
+                </svg>
+              </span>
+              <div class="hub-details">
+                <span class="hub-city">Doha, Qatar</span>
+                <span class="hub-time" id="tz-clock-1">AST (UTC+3)</span>
+              </div>
+            </div>
+            <div class="phone-number-display">+974 3396 1119</div>
+            <div class="line-action-buttons">
+              <a href="tel:+97433961119" class="line-btn call" title="Call Qatar">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </a>
+              <a href="https://wa.me/97433961119" target="_blank" rel="noopener noreferrer" class="line-btn whatsapp" title="WhatsApp Qatar">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+              </a>
+              <button class="line-btn copy" onclick="copyToClipboard('+974 3396 1119', 'Qatar Direct Line')" title="Copy Number">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Lebanon -->
+          <div class="direct-line-row">
+            <div class="direct-line-info">
+              <!-- Lebanon Flag SVG -->
+              <span class="flag-svg-icon" title="Lebanon">
+                <svg viewBox="0 0 32 20" width="24" height="15" style="border-radius: 3px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.2);">
+                  <rect width="32" height="5" fill="#ee161f"/>
+                  <rect y="5" width="32" height="10" fill="#ffffff"/>
+                  <rect y="15" width="32" height="5" fill="#ee161f"/>
+                  <polygon points="16 5.5 12 14.5 20 14.5" fill="#00a859"/>
+                </svg>
+              </span>
+              <div class="hub-details">
+                <span class="hub-city">Beirut, Lebanon</span>
+                <span class="hub-time" id="tz-clock-2">EET (UTC+2)</span>
+              </div>
+            </div>
+            <div class="phone-number-display">+961 79 139 129</div>
+            <div class="line-action-buttons">
+              <a href="tel:+96179139129" class="line-btn call" title="Call Lebanon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </a>
+              <a href="https://wa.me/96179139129" target="_blank" rel="noopener noreferrer" class="line-btn whatsapp" title="WhatsApp Lebanon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+              </a>
+              <button class="line-btn copy" onclick="copyToClipboard('+961 79 139 129', 'Lebanon Direct Line')" title="Copy Number">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Turkey -->
+          <div class="direct-line-row">
+            <div class="direct-line-info">
+              <!-- Turkey Flag SVG -->
+              <span class="flag-svg-icon" title="Turkey">
+                <svg viewBox="0 0 32 20" width="24" height="15" style="border-radius: 3px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.2);">
+                  <rect width="32" height="20" fill="#e30a17"/>
+                  <circle cx="12" cy="10" r="5" fill="#ffffff"/>
+                  <circle cx="13.2" cy="10" r="4" fill="#e30a17"/>
+                  <polygon points="17 10 18.2 10.8 17.8 9.5 18.8 8.6 17.5 8.6 17 7.5 16.5 8.6 15.2 8.6 16.2 9.5 15.8 10.8" fill="#ffffff"/>
+                </svg>
+              </span>
+              <div class="hub-details">
+                <span class="hub-city">Istanbul, Turkey</span>
+                <span class="hub-time" id="tz-clock-3">TRT (UTC+3)</span>
+              </div>
+            </div>
+            <div class="phone-number-display">+90 538 849 9119</div>
+            <div class="line-action-buttons">
+              <a href="tel:+905388499119" class="line-btn call" title="Call Turkey">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </a>
+              <a href="https://wa.me/905388499119" target="_blank" rel="noopener noreferrer" class="line-btn whatsapp" title="WhatsApp Turkey">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+              </a>
+              <button class="line-btn copy" onclick="copyToClipboard('+90 538 849 9119', 'Turkey Direct Line')" title="Copy Number">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Sudan -->
+          <div class="direct-line-row">
+            <div class="direct-line-info">
+              <!-- Sudan Flag SVG -->
+              <span class="flag-svg-icon" title="Sudan">
+                <svg viewBox="0 0 32 20" width="24" height="15" style="border-radius: 3px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.2);">
+                  <rect width="32" height="6.67" fill="#d21034"/>
+                  <rect y="6.67" width="32" height="6.67" fill="#ffffff"/>
+                  <rect y="13.33" width="32" height="6.67" fill="#000000"/>
+                  <polygon points="0 0 12 10 0 20" fill="#007229"/>
+                </svg>
+              </span>
+              <div class="hub-details">
+                <span class="hub-city">Khartoum, Sudan</span>
+                <span class="hub-time" id="tz-clock-4">CAT (UTC+2)</span>
+              </div>
+            </div>
+            <div class="phone-number-display">+249 99 195 9595</div>
+            <div class="line-action-buttons">
+              <a href="tel:+249991959595" class="line-btn call" title="Call Sudan">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </a>
+              <a href="https://wa.me/249991959595" target="_blank" rel="noopener noreferrer" class="line-btn whatsapp" title="WhatsApp Sudan">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+              </a>
+              <button class="line-btn copy" onclick="copyToClipboard('+249 99 195 9595', 'Sudan Direct Line')" title="Copy Number">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+              </button>
+            </div>
+          </div>
         </div>
 
         <div class="exec-card-footer">
@@ -321,7 +494,7 @@
             </div>
             <div class="venture-info">
               <h4 class="venture-name">Opal Trading Qatar</h4>
-              <p class="venture-tag">Trading & Infrastructure (Qatar)</p>
+              <p class="venture-tag">Infrastructure & Trade (Qatar)</p>
             </div>
             <span class="venture-arrow">
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
@@ -373,7 +546,7 @@
       <!-- Site Footer -->
       <footer class="site-footer">
         <div class="footer-conglomerate-logos">
-          <span>Opal World Tech</span>
+          <span>Opal World Technologies</span>
           <span>·</span>
           <span>Opal SP</span>
           <span>·</span>
@@ -393,7 +566,41 @@
 
   <!-- ================= MODALS ================= -->
 
-  <!-- 1. Company Venture Detail Modal -->
+  <!-- 1. Regional Call Selector Modal -->
+  <div id="callModal" class="modal-backdrop">
+    <div class="modal-box">
+      <button class="modal-close-btn" onclick="closeModal('callModal')" aria-label="Close modal">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+
+      <div style="text-align: center; margin-bottom: 1.5rem;">
+        <div style="width: 56px; height: 56px; border-radius: 50%; background: rgba(26, 98, 214, 0.12); color: var(--opal-sapphire); display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </div>
+        <h3 style="font-size: 1.35rem; font-weight: 800; color: var(--text-primary);">Connect Direct</h3>
+        <p id="modalCallNumberLabel" style="font-family:'JetBrains Mono', monospace; font-size: 0.95rem; color: var(--text-muted); margin-top: 0.25rem;">+971 50 960 1323</p>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+        <a id="modalCallCellularBtn" href="tel:+971509601323" class="btn-action btn-primary-blue" style="width: 100%; justify-content: center;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span>Cellular Direct Call</span>
+        </a>
+
+        <a id="modalCallWhatsappBtn" href="https://wa.me/971509601323" target="_blank" rel="noopener noreferrer" class="btn-action" style="background:#25D366; color:#ffffff; width:100%; justify-content: center; box-shadow: 0 4px 16px rgba(37,211,102,0.35);">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          <span>WhatsApp Chat</span>
+        </a>
+
+        <button id="modalCallCopyBtn" class="btn-action btn-secondary-surface" style="width: 100%; justify-content: center;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+          <span>Copy Phone Number</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Company Venture Detail Modal -->
   <div id="companyModal" class="modal-backdrop">
     <div class="modal-box">
       <div style="position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--opal-ruby), var(--opal-sapphire), var(--opal-emerald));"></div>
@@ -425,14 +632,14 @@
     </div>
   </div>
 
-  <!-- 2. QR Code Networking Modal -->
+  <!-- 3. QR Code Networking Modal -->
   <div id="qrModal" class="modal-backdrop">
-    <div class="modal-box" style="text-align: center; padding-top: 2.5rem;">
+    <div class="modal-box" style="text-align: center;">
       <button class="modal-close-btn" onclick="closeModal('qrModal')" aria-label="Close modal">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
       </button>
 
-      <span style="font-size:0.75rem; font-weight:800; text-transform:uppercase; letter-spacing:0.12em; color:var(--opal-sapphire); display:block; padding:0 2rem;">Instant Mobile Exchange</span>
+      <span style="font-size:0.75rem; font-weight:800; text-transform:uppercase; letter-spacing:0.12em; color:var(--opal-sapphire);">Instant Mobile Exchange</span>
       <h3 style="font-size: 1.4rem; font-weight: 900; color: var(--text-primary); margin-top: 0.35rem;">Scan Executive Card</h3>
       <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem;">Point any mobile camera to view card and save contact instantly.</p>
 
@@ -449,7 +656,7 @@
     </div>
   </div>
 
-  <!-- 3. Media Lightbox Modal -->
+  <!-- 4. Media Lightbox Modal -->
   <div id="lightboxModal" class="modal-backdrop">
     <div class="lightbox-box">
       <button class="modal-close-btn" onclick="closeModal('lightboxModal')" aria-label="Close modal" style="top: -45px; right: 0; background: rgba(255,255,255,0.2); color: #ffffff; border: none;">
@@ -470,21 +677,21 @@
 
   <!-- Mobile Quick Action Floating Bottom Bar -->
   <div class="mobile-quick-bar">
+    <button class="quick-bar-btn" onclick="openCallSelector('+971 50 960 1323')">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      <span>Call</span>
+    </button>
+    <a href="https://wa.me/971509601323" target="_blank" rel="noopener noreferrer" class="quick-bar-btn">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+      <span>WhatsApp</span>
+    </a>
     <a href="mailto:chakik@opal-gp.com" class="quick-bar-btn">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
       <span>Email</span>
     </a>
-    <a href="https://www.opal-gp.com" target="_blank" rel="noopener noreferrer" class="quick-bar-btn">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1 4-10z"/></svg>
-      <span>Website</span>
-    </a>
     <button class="quick-bar-btn" onclick="downloadExecutiveVCard()">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" x2="19" y1="8" y2="14"/><line x1="22" x2="16" y1="11" y2="11"/></svg>
       <span>vCard</span>
-    </button>
-    <button class="quick-bar-btn" onclick="openQrModal()">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="5" height="5" x="3" y="3" rx="1"/><rect width="5" height="5" x="16" y="3" rx="1"/><rect width="5" height="5" x="3" y="16" rx="1"/><path d="M21 16h-3a2 2 0 0 0-2 2v3"/><path d="M21 21v.01"/><path d="M12 7v3a2 2 0 0 1-2 2H7"/><path d="M3 12h.01"/><path d="M12 3h.01"/><path d="M12 16v.01"/><path d="M16 12h1"/><path d="M21 12v.01"/><path d="M12 21v-1"/></svg>
-      <span>QR Code</span>
     </button>
   </div>
 

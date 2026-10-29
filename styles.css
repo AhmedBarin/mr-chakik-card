@@ -474,6 +474,192 @@ body {
   box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35);
 }
 
+/* ==========================================================================
+   DIRECT LINES & GLOBAL PRESENCE (WORLD CLOCKS)
+   ========================================================================== */
+.direct-lines-panel {
+  padding: 0;
+  overflow: hidden;
+  background: var(--surface-subtle);
+  border-top: 1px solid var(--border-subtle);
+}
+
+.direct-lines-header {
+  padding: 0.85rem 1.25rem;
+  background: rgba(0, 0, 0, 0.03);
+  border-bottom: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+[data-theme="dark"] .direct-lines-header {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.direct-lines-title {
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.direct-lines-status {
+  font-size: 0.7rem;
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--opal-emerald);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.direct-line-row {
+  padding: 0.8rem 1.25rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 0.25rem 0.75rem;
+  border-bottom: 1px solid var(--border-subtle);
+  transition: background var(--transition-fast);
+}
+
+.direct-line-row:last-child {
+  border-bottom: none;
+}
+
+.direct-line-row:hover {
+  background: var(--surface-card-hover);
+}
+
+.direct-line-info {
+  grid-column: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  min-width: 0;
+}
+
+.flag-svg-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 24px;
+  height: 15px;
+}
+
+.hub-details {
+  display: flex;
+  align-items: baseline;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+  min-width: 0;
+}
+
+.hub-city {
+  font-size: 0.84rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.hub-time {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: var(--opal-sapphire);
+  background: rgba(26, 98, 214, 0.08);
+  padding: 0.1rem 0.4rem;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+[data-theme="dark"] .hub-time {
+  background: rgba(59, 130, 246, 0.15);
+  color: #93c5fd;
+}
+
+.phone-number-display {
+  grid-column: 1;
+  padding-left: calc(24px + 0.65rem);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.line-action-buttons {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  flex-shrink: 0;
+}
+
+.line-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  border: 1px solid var(--border-subtle);
+  background: var(--surface-card);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-decoration: none;
+}
+
+.line-btn svg {
+  width: 14px;
+  height: 14px;
+}
+
+.line-btn:hover {
+  transform: translateY(-2px);
+  color: var(--text-primary);
+  border-color: var(--border-active);
+  box-shadow: var(--shadow-sm);
+}
+
+.line-btn.call:hover {
+  background: var(--opal-sapphire);
+  color: #ffffff;
+  border-color: var(--opal-sapphire);
+}
+
+.line-btn.whatsapp:hover {
+  background: #25d366;
+  color: #ffffff;
+  border-color: #25d366;
+}
+
+.line-btn.copy:hover {
+  background: var(--surface-subtle);
+  color: var(--opal-sapphire);
+  border-color: var(--opal-sapphire);
+}
+
+[data-theme="dark"] .line-btn {
+  background: rgba(30, 41, 59, 0.7);
+  border-color: rgba(255, 255, 255, 0.08);
+  color: var(--text-secondary);
+}
+
+[data-theme="dark"] .line-btn:hover {
+  color: #ffffff;
+}
+
 /* Quick Hub Details Footer on Left Column */
 .exec-card-footer {
   padding: 1.25rem 1.5rem;
@@ -1246,9 +1432,46 @@ body {
     font-size: 0.72rem;
     gap: 0.35rem 0.6rem;
   }
+
+  .direct-line-row {
+    padding: 0.75rem 1rem;
+  }
 }
 
 @media (max-width: 420px) {
+  .direct-lines-header {
+    padding: 0.75rem 0.85rem;
+  }
+
+  .direct-line-row {
+    padding: 0.7rem 0.85rem;
+    gap: 0.2rem 0.5rem;
+  }
+
+  .hub-city {
+    font-size: 0.8rem;
+  }
+
+  .hub-time {
+    font-size: 0.64rem;
+    padding: 0.08rem 0.3rem;
+  }
+
+  .phone-number-display {
+    font-size: 0.74rem;
+    padding-left: calc(24px + 0.5rem);
+  }
+
+  .line-btn {
+    width: 29px;
+    height: 29px;
+  }
+
+  .line-btn svg {
+    width: 13px;
+    height: 13px;
+  }
+
   .executive-layout {
     padding: 1rem 0.75rem 5.5rem;
   }

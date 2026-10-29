@@ -49,25 +49,33 @@ const COMPANY_VENTURES = [
     badge: "Gold & Resources"
   },
   {
-    id: "trading-qatar",
+    id: "qatar",
     title: "Opal Trading Qatar",
-    tagline: "Trading, Infrastructure & Energy · Qatar",
+    tagline: "Infrastructure, Trading & Civil Works · Qatar",
     logo: "assets/logo-global.png",
     fallbackLogo: "https://static.wixstatic.com/media/e5c5f1_1d82cb7eaf9142c5b40d925154bb3ccc~mv2.png",
-    description: "Qatar-headquartered infrastructure, commodity trading, and engineering powerhouse, executing critical civil infrastructure, power distribution networks, and industrial development projects across the Middle East.",
+    description: "Qatar-headquartered infrastructure and engineering powerhouse, executing critical civil infrastructure, commodity trading, power distribution networks, and industrial development projects across the Middle East.",
     website: "http://www.opalglobal-qatar.com/",
-    badge: "Trading & Infrastructure"
+    badge: "Trading & Sovereign Infrastructure"
   },
   {
-    id: "management-turkey",
+    id: "turkey",
     title: "Opal Management Turkey",
     tagline: "Management & Strategic Advisory · Turkey",
     logo: "assets/logo-grp.png",
     fallbackLogo: "https://static.wixstatic.com/media/e5c5f1_b2ede517abe649688e2164e58b289dd3~mv2.png",
-    description: "Premier multinational management and strategic consultancy in Turkey. Providing sovereign-level advisory, cross-border M&A governance, and corporate structuring across Turkey, the Middle East, and Europe.",
+    description: "A premier multinational management and financial advisory powerhouse in Turkey and across the region. Providing sovereign-level consultancy, cross-border M&A governance, and corporate structuring.",
     website: "https://tr.opal-gp.com/",
     badge: "Management Advisory"
   }
+];
+
+const DIRECT_LINES = [
+  { city: "Dubai", country: "United Arab Emirates", flag: "🇦🇪", tz: "Asia/Dubai", tzCode: "GST", number: "+971 50 960 1323", raw: "+971509601323", primary: true },
+  { city: "Doha", country: "Qatar", flag: "🇶🇦", tz: "Asia/Qatar", tzCode: "AST", number: "+974 3396 1119", raw: "+97433961119", primary: false },
+  { city: "Beirut", country: "Lebanon", flag: "🇱🇧", tz: "Asia/Beirut", tzCode: "EET", number: "+961 79 139 129", raw: "+96179139129", primary: false },
+  { city: "Istanbul", country: "Turkey", flag: "🇹🇷", tz: "Europe/Istanbul", tzCode: "TRT", number: "+90 538 849 9119", raw: "+905388499119", primary: false },
+  { city: "Khartoum", country: "Sudan", flag: "🇸🇩", tz: "Africa/Khartoum", tzCode: "CAT", number: "+249 99 195 9595", raw: "+249991959595", primary: false }
 ];
 
 // ==========================================
@@ -102,7 +110,31 @@ function toggleTheme() {
 }
 
 // ==========================================
-// 3. TOAST NOTIFICATIONS
+// 3. LIVE WORLD CLOCKS
+// ==========================================
+
+function updateWorldClocks() {
+  DIRECT_LINES.forEach((line, index) => {
+    const el = document.getElementById(`tz-clock-${index}`);
+    if (!el) return;
+    try {
+      const now = new Date();
+      const formatter = new Intl.DateTimeFormat('en-US', {
+        timeZone: line.tz,
+        hour: 'numeric',
+        minute: 'numeric',
+        hour12: true
+      });
+      const timeStr = formatter.format(now);
+      el.textContent = `${timeStr} (${line.tzCode})`;
+    } catch (e) {
+      el.textContent = line.tzCode;
+    }
+  });
+}
+
+// ==========================================
+// 4. TOAST NOTIFICATIONS
 // ==========================================
 
 let toastTimeout = null;
@@ -144,9 +176,9 @@ function fallbackCopy(text, label) {
   textArea.select();
   try {
     document.execCommand('copy');
-    showToast(`Copied ${label || 'text'}: ${text}`);
+    showToast(`Copied ${label || 'number'}: ${text}`);
   } catch (err) {
-    showToast(`${label ? label + ': ' : ''}${text}`);
+    showToast(`Direct Line: ${text}`);
   }
   document.body.removeChild(textArea);
 }
@@ -161,15 +193,21 @@ function downloadExecutiveVCard() {
     'VERSION:3.0',
     'N:Chakik;Ahmad;;Mr.;',
     'FN:Ahmad Chakik',
-    'ORG:Opal Group;Opal World Technologies;Opal Mining Co Ltd;Opal Strategic Partners',
+    'ORG:Opal World Technologies;Opal Strategic Partners;Opal SG;Opal Mining Co Ltd;Opal Trading Qatar;Opal Management Turkey;Opal Group',
     'TITLE:Chairman',
+    'TEL;TYPE=CELL,VOICE,PREF:+971509601323',
+    'TEL;TYPE=WORK,VOICE:+97433961119',
+    'TEL;TYPE=WORK,VOICE:+96179139129',
+    'TEL;TYPE=WORK,VOICE:+905388499119',
+    'TEL;TYPE=WORK,VOICE:+249991959595',
     'EMAIL;TYPE=INTERNET,WORK,PREF:chakik@opal-gp.com',
     'URL;TYPE=WORK:https://www.opal-gp.com',
     'URL;TYPE=TECH:https://www.opalworldtechs.com',
     'URL;TYPE=SAUDI:https://opal-sp.com',
-    'URL;TYPE=TURKEY:https://tr.opal-gp.com',
+    'URL;TYPE=TURKEY:https://tr.opal-gp.com/',
     'ADR;TYPE=WORK:;;Office Suite;Dubai;Dubai;;United Arab Emirates',
     'NOTE:Chairman & Prominent International Business Leader across Mining, Technology, Advisory, and Sovereign Infrastructure.',
+    'X-SOCIALPROFILE;type=whatsapp:https://wa.me/971509601323',
     'REV:' + new Date().toISOString(),
     'END:VCARD'
   ].join('\r\n');
@@ -284,7 +322,25 @@ function openCompanyModal(index) {
 }
 
 // ==========================================
-// 10. LIGHTBOX PREVIEW
+// 10. CALL SELECTOR MODAL
+// ==========================================
+
+function openCallSelector(number) {
+  const targetNumber = number || '+971 50 960 1323';
+  const cleanNumber = targetNumber.replace(/[^\d+]/g, '');
+
+  document.getElementById('modalCallCellularBtn').href = `tel:${cleanNumber}`;
+  document.getElementById('modalCallWhatsappBtn').href = `https://wa.me/${cleanNumber.replace('+', '')}`;
+  document.getElementById('modalCallNumberLabel').textContent = targetNumber;
+  
+  const copyBtn = document.getElementById('modalCallCopyBtn');
+  copyBtn.onclick = () => copyToClipboard(targetNumber, 'number');
+
+  openModal('callModal');
+}
+
+// ==========================================
+// 11. LIGHTBOX PREVIEW
 // ==========================================
 
 function openLightbox(imgSrc, caption) {
@@ -298,7 +354,7 @@ function openLightbox(imgSrc, caption) {
 }
 
 // ==========================================
-// 11. BIO EXPANSION TOGGLE
+// 12. BIO EXPANSION TOGGLE
 // ==========================================
 
 function toggleBio() {
@@ -322,9 +378,11 @@ function toggleBio() {
 }
 
 // ==========================================
-// 12. INITIALIZATION ON DOM READY
+// 13. INITIALIZATION ON DOM READY
 // ==========================================
 
 document.addEventListener('DOMContentLoaded', () => {
   initTheme();
+  updateWorldClocks();
+  setInterval(updateWorldClocks, 60000); // Live clock update every minute
 });

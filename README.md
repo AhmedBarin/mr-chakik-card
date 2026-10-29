@@ -9,13 +9,14 @@ A bespoke, ultra-modern executive digital card and conglomerate hub built for **
 - **Sovereign Executive Aesthetic**: Crafted with precision glassmorphism, iridescent Opal jewel glows, and typography using *Plus Jakarta Sans* & *JetBrains Mono*.
 - **Pristine Light Theme (Default)**: Bright alabaster pearl canvas with crisp slate and charcoal typography, soft shadows, and an optional Obsidian Dark Mode toggle.
 - **Adaptive Dual-Column Layout**: 
-  - **Desktop / Tablet**: Symmetrical dual-column executive dashboard. Left column holds the Executive Profile, Quick Actions, and instant QR exchange. Right column showcases the Executive Dossier, Digital Brochure, 6 Conglomerate Ventures (2x3 grid: Opal World Tech, Opal SP, Opal SG, Opal Mining, Opal Trading Qatar, and Opal Management Turkey), and Leadership Gallery.
-  - **Mobile**: Seamless single-column smartphone card with a floating bottom navigation bar for quick one-thumb email, website, vCard saving, and QR sharing.
+  - **Desktop / Tablet**: Symmetrical dual-column executive dashboard. Left column holds the Executive Profile, Quick Actions, and Direct Lines directory with live local times. Right column showcases the Executive Dossier, Digital Brochure, 6 Conglomerate Ventures (2x3 grid), and Leadership Gallery.
+  - **Mobile**: Seamless single-column smartphone card with a floating bottom navigation bar for quick one-thumb calls, WhatsApp, email, and vCard saving.
+- **Live International World Clocks**: Real-time timezone calculation and live clock updates for **Dubai (GST)**, **Qatar (AST)**, **Lebanon (EET)**, **Turkey (TRT)**, and **Sudan (CAT)**.
 - **One-Tap Actions**:
-  - Direct Official Email (`mailto:`)
-  - Corporate Website Access
-  - Instant Profile Link Copy with floating toast feedback
-- **Enriched vCard 3.0 Generation (`.vcf`)**: One-click download with full name, title, multiple organizations, official email, websites, and bio notes.
+  - Direct Cellular Call (`tel:`)
+  - Instant WhatsApp Chat (`wa.me`)
+  - Instant Copy Phone Number with floating toast feedback
+- **Enriched vCard 3.0 Generation (`.vcf`)**: One-click download with full name, title, multiple organizations, 5 international phone numbers, email, websites, and bio notes.
 - **Interactive QR Code Generator**: Generates an instant high-resolution QR code modal for rapid in-person networking from any smartphone camera.
 - **Conglomerate Portfolio Modals**: Interactive detail cards for Opal World Tech, Opal SP, Opal SG, Opal Mining, Opal Trading Qatar, and Opal Management Turkey.
 - **Zero-Build Architecture**: 100% vanilla HTML5, CSS3, and modern JavaScript. Deploys instantly to GitHub Pages with zero compilation steps or external dependencies.
