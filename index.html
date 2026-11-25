@@ -13,7 +13,12 @@
   <meta property="og:type" content="profile">
   <meta property="og:title" content="Ahmad Chakik — Chairman">
   <meta property="og:description" content="Digital Executive Profile and Conglomerate Portfolio. Connect directly via Dubai, Qatar, Beirut, Istanbul, and Sudan direct lines.">
-  <meta property="og:image" content="assets/avatar.jpg">
+  <meta property="og:url" content="https://ahmedbarin.github.io/mr-chakik-card/">
+  <!-- Link previews require an absolute image URL; update both if the site moves -->
+  <meta property="og:image" content="https://ahmedbarin.github.io/mr-chakik-card/assets/avatar.jpg">
+  <meta property="og:image:width" content="500">
+  <meta property="og:image:height" content="273">
+  <meta property="og:image:alt" content="Ahmad Chakik">
   <meta name="theme-color" content="#f8fafc">
 
   <!-- Favicon -->
@@ -134,7 +139,7 @@
 
         <!-- Primary Action Grid -->
         <div class="exec-actions-grid">
-          <button class="btn-action btn-primary-blue" onclick="openCallSelector('+971 50 960 1323')" title="Call Direct Line">
+          <button class="btn-action btn-primary-blue" onclick="openCallSelector('+971 58 646 4119')" title="Call Direct Line">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
               <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
             </svg>
@@ -198,15 +203,15 @@
                 <span class="hub-time" id="tz-clock-0">GST (UTC+4)</span>
               </div>
             </div>
-            <div class="phone-number-display">+971 50 960 1323</div>
+            <div class="phone-number-display">+971 58 646 4119</div>
             <div class="line-action-buttons">
-              <a href="tel:+971509601323" class="line-btn call" title="Call Dubai">
+              <a href="tel:+971586464119" class="line-btn call" title="Call Dubai">
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
               </a>
-              <a href="https://wa.me/971509601323" target="_blank" rel="noopener noreferrer" class="line-btn whatsapp" title="WhatsApp Dubai">
+              <a href="https://wa.me/971586464119" target="_blank" rel="noopener noreferrer" class="line-btn whatsapp" title="WhatsApp Dubai">
                 <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
               </a>
-              <button class="line-btn copy" onclick="copyToClipboard('+971 50 960 1323', 'Dubai Direct Line')" title="Copy Number">
+              <button class="line-btn copy" onclick="copyToClipboard('+971 58 646 4119', 'Dubai Direct Line')" title="Copy Number">
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
               </button>
             </div>
@@ -389,7 +394,7 @@
             </p>
           </div>
 
-          <button id="bioToggleBtn" class="toggle-bio-btn" onclick="toggleBio()">
+          <button id="bioToggleBtn" class="toggle-bio-btn" aria-expanded="false" aria-controls="expandableBioContent" onclick="toggleBio()">
             <span id="bioToggleText">Read Full Biography</span>
             <svg id="bioToggleIcon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
           </button>
@@ -397,7 +402,7 @@
       </article>
 
       <!-- Digital Brochure Spotlight -->
-      <div class="brochure-card" onclick="window.open('https://drive.google.com/file/d/1yD5c8eJDTE0KRhisycLp3iu4ojkROIso/view?usp=drive_link', '_blank')">
+      <a class="brochure-card" href="https://drive.google.com/file/d/1yD5c8eJDTE0KRhisycLp3iu4ojkROIso/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
         <div class="brochure-bg-grid"></div>
         <div class="brochure-glow"></div>
         
@@ -421,7 +426,7 @@
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
           </div>
         </div>
-      </div>
+      </a>
 
       <!-- Strategic Ventures Portfolio -->
       <div>
@@ -432,7 +437,7 @@
 
         <div class="ventures-grid">
           <!-- 0: Opal World Tech -->
-          <div class="venture-card" onclick="openCompanyModal(0)">
+          <div class="venture-card" role="button" tabindex="0" onclick="openCompanyModal(0)">
             <div class="venture-logo-box">
               <img src="assets/logo-tech.png" alt="Opal World Tech" onerror="this.onerror=null; this.src='https://static.wixstatic.com/media/e5c5f1_e20db5de443545f98acb2a6b38113ab2~mv2.png';">
             </div>
@@ -446,7 +451,7 @@
           </div>
 
           <!-- 1: Opal SP -->
-          <div class="venture-card" onclick="openCompanyModal(1)">
+          <div class="venture-card" role="button" tabindex="0" onclick="openCompanyModal(1)">
             <div class="venture-logo-box">
               <img src="assets/logo-sp.png" alt="Opal SP" onerror="this.onerror=null; this.src='https://opal-sp.com/favicon.png';">
             </div>
@@ -460,7 +465,7 @@
           </div>
 
           <!-- 2: Opal SG -->
-          <div class="venture-card" onclick="openCompanyModal(2)">
+          <div class="venture-card" role="button" tabindex="0" onclick="openCompanyModal(2)">
             <div class="venture-logo-box">
               <img src="assets/logo-sg.png" alt="Opal SG" onerror="this.onerror=null; this.src='https://static.wixstatic.com/media/e5c5f1_42116871cdda4d3c9a761de53851ee08~mv2.png';">
             </div>
@@ -474,7 +479,7 @@
           </div>
 
           <!-- 3: Opal Mining -->
-          <div class="venture-card" onclick="openCompanyModal(3)">
+          <div class="venture-card" role="button" tabindex="0" onclick="openCompanyModal(3)">
             <div class="venture-logo-box">
               <img src="assets/logo-mining.png" alt="Opal Mining" onerror="this.onerror=null; this.src='https://static.wixstatic.com/media/e5c5f1_f91e6043a533419ca8e570a6b924c05d~mv2.png';">
             </div>
@@ -488,7 +493,7 @@
           </div>
 
           <!-- 4: Opal Trading Qatar -->
-          <div class="venture-card" onclick="openCompanyModal(4)">
+          <div class="venture-card" role="button" tabindex="0" onclick="openCompanyModal(4)">
             <div class="venture-logo-box">
               <img src="assets/logo-global.png" alt="Opal Trading Qatar" onerror="this.onerror=null; this.src='https://static.wixstatic.com/media/e5c5f1_1d82cb7eaf9142c5b40d925154bb3ccc~mv2.png';">
             </div>
@@ -502,7 +507,7 @@
           </div>
 
           <!-- 5: Opal Management Turkey -->
-          <div class="venture-card" onclick="openCompanyModal(5)">
+          <div class="venture-card" role="button" tabindex="0" onclick="openCompanyModal(5)">
             <div class="venture-logo-box">
               <img src="assets/logo-grp.png" alt="Opal Management Turkey" onerror="this.onerror=null; this.src='https://static.wixstatic.com/media/e5c5f1_b2ede517abe649688e2164e58b289dd3~mv2.png';">
             </div>
@@ -525,7 +530,7 @@
         </div>
 
         <div class="media-grid">
-          <div class="media-card" onclick="openLightbox('assets/award.jpg', 'Global Recognition — Chairman Ahmad Chakik Award Ceremony, Dubai Skyline')">
+          <div class="media-card" role="button" tabindex="0" onclick="openLightbox('assets/award.jpg', 'Global Recognition — Chairman Ahmad Chakik Award Ceremony, Dubai Skyline')">
             <img src="assets/award.jpg" alt="Ahmad Chakik Award Ceremony" onerror="this.onerror=null; this.src='https://www.opal-sg.com/images/design-mode/Ahmad%20Chakik%20Award.jpeg';">
             <div class="media-overlay">
               <span class="media-badge">Global Recognition</span>
@@ -533,7 +538,7 @@
             </div>
           </div>
 
-          <div class="media-card" onclick="openLightbox('assets/leadership.jpg', 'Strategic Leadership — Conglomerate Board & International Strategic Summit')">
+          <div class="media-card" role="button" tabindex="0" onclick="openLightbox('assets/leadership.jpg', 'Strategic Leadership — Conglomerate Board & International Strategic Summit')">
             <img src="assets/leadership.jpg" alt="Strategic Leadership Summit" onerror="this.onerror=null; this.src='https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=800';">
             <div class="media-overlay">
               <span class="media-badge">Strategic Leadership</span>
@@ -567,7 +572,7 @@
   <!-- ================= MODALS ================= -->
 
   <!-- 1. Regional Call Selector Modal -->
-  <div id="callModal" class="modal-backdrop">
+  <div id="callModal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="callModalTitle">
     <div class="modal-box">
       <button class="modal-close-btn" onclick="closeModal('callModal')" aria-label="Close modal">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
@@ -577,17 +582,17 @@
         <div style="width: 56px; height: 56px; border-radius: 50%; background: rgba(26, 98, 214, 0.12); color: var(--opal-sapphire); display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
           <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
         </div>
-        <h3 style="font-size: 1.35rem; font-weight: 800; color: var(--text-primary);">Connect Direct</h3>
-        <p id="modalCallNumberLabel" style="font-family:'JetBrains Mono', monospace; font-size: 0.95rem; color: var(--text-muted); margin-top: 0.25rem;">+971 50 960 1323</p>
+        <h3 id="callModalTitle" style="font-size: 1.35rem; font-weight: 800; color: var(--text-primary);">Connect Direct</h3>
+        <p id="modalCallNumberLabel" style="font-family:'JetBrains Mono', monospace; font-size: 0.95rem; color: var(--text-muted); margin-top: 0.25rem;">+971 58 646 4119</p>
       </div>
 
       <div style="display: flex; flex-direction: column; gap: 0.75rem;">
-        <a id="modalCallCellularBtn" href="tel:+971509601323" class="btn-action btn-primary-blue" style="width: 100%; justify-content: center;">
+        <a id="modalCallCellularBtn" href="tel:+971586464119" class="btn-action btn-primary-blue" style="width: 100%; justify-content: center;">
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
           <span>Cellular Direct Call</span>
         </a>
 
-        <a id="modalCallWhatsappBtn" href="https://wa.me/971509601323" target="_blank" rel="noopener noreferrer" class="btn-action" style="background:#25D366; color:#ffffff; width:100%; justify-content: center; box-shadow: 0 4px 16px rgba(37,211,102,0.35);">
+        <a id="modalCallWhatsappBtn" href="https://wa.me/971586464119" target="_blank" rel="noopener noreferrer" class="btn-action" style="background:#25D366; color:#ffffff; width:100%; justify-content: center; box-shadow: 0 4px 16px rgba(37,211,102,0.35);">
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
           <span>WhatsApp Chat</span>
         </a>
@@ -601,7 +606,7 @@
   </div>
 
   <!-- 2. Company Venture Detail Modal -->
-  <div id="companyModal" class="modal-backdrop">
+  <div id="companyModal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="companyModalTitle">
     <div class="modal-box">
       <div style="position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--opal-ruby), var(--opal-sapphire), var(--opal-emerald));"></div>
       <button class="modal-close-btn" onclick="closeModal('companyModal')" aria-label="Close modal">
@@ -633,18 +638,18 @@
   </div>
 
   <!-- 3. QR Code Networking Modal -->
-  <div id="qrModal" class="modal-backdrop">
+  <div id="qrModal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="qrModalTitle">
     <div class="modal-box" style="text-align: center;">
       <button class="modal-close-btn" onclick="closeModal('qrModal')" aria-label="Close modal">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
       </button>
 
       <span style="font-size:0.75rem; font-weight:800; text-transform:uppercase; letter-spacing:0.12em; color:var(--opal-sapphire);">Instant Mobile Exchange</span>
-      <h3 style="font-size: 1.4rem; font-weight: 900; color: var(--text-primary); margin-top: 0.35rem;">Scan Executive Card</h3>
+      <h3 id="qrModalTitle" style="font-size: 1.4rem; font-weight: 900; color: var(--text-primary); margin-top: 0.35rem;">Scan Executive Card</h3>
       <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem;">Point any mobile camera to view card and save contact instantly.</p>
 
       <div class="qr-preview-box" id="qrCodeContainer">
-        <!-- SVG QR injected via script.js -->
+        <!-- SVG QR generated locally by qr.js -->
       </div>
 
       <p id="qrPageUrl" style="font-family:'JetBrains Mono', monospace; font-size:0.72rem; color:var(--text-muted); word-break:break-all; margin-bottom:1.25rem;"></p>
@@ -657,7 +662,7 @@
   </div>
 
   <!-- 4. Media Lightbox Modal -->
-  <div id="lightboxModal" class="modal-backdrop">
+  <div id="lightboxModal" class="modal-backdrop" role="dialog" aria-modal="true" aria-label="Photo preview">
     <div class="lightbox-box">
       <button class="modal-close-btn" onclick="closeModal('lightboxModal')" aria-label="Close modal" style="top: -45px; right: 0; background: rgba(255,255,255,0.2); color: #ffffff; border: none;">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
@@ -677,11 +682,11 @@
 
   <!-- Mobile Quick Action Floating Bottom Bar -->
   <div class="mobile-quick-bar">
-    <button class="quick-bar-btn" onclick="openCallSelector('+971 50 960 1323')">
+    <button class="quick-bar-btn" onclick="openCallSelector('+971 58 646 4119')">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
       <span>Call</span>
     </button>
-    <a href="https://wa.me/971509601323" target="_blank" rel="noopener noreferrer" class="quick-bar-btn">
+    <a href="https://wa.me/971586464119" target="_blank" rel="noopener noreferrer" class="quick-bar-btn">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
       <span>WhatsApp</span>
     </a>
@@ -696,6 +701,7 @@
   </div>
 
   <!-- Scripts -->
+  <script src="qr.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

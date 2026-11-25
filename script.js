@@ -45,7 +45,7 @@ const COMPANY_VENTURES = [
     logo: "assets/logo-mining.png",
     fallbackLogo: "https://static.wixstatic.com/media/e5c5f1_f91e6043a533419ca8e570a6b924c05d~mv2.png",
     description: "Leading sustainable gold exploration, mineral concession development, and international precious metal bullion trading with over three decades of field excellence across Africa.",
-    website: "http://opal-mining.com/",
+    website: "https://www.opal-mining.com/",
     badge: "Gold & Resources"
   },
   {
@@ -55,7 +55,7 @@ const COMPANY_VENTURES = [
     logo: "assets/logo-global.png",
     fallbackLogo: "https://static.wixstatic.com/media/e5c5f1_1d82cb7eaf9142c5b40d925154bb3ccc~mv2.png",
     description: "Qatar-headquartered infrastructure and engineering powerhouse, executing critical civil infrastructure, commodity trading, power distribution networks, and industrial development projects across the Middle East.",
-    website: "http://www.opalglobal-qatar.com/",
+    website: "https://www.opalglobal-qatar.com/",
     badge: "Trading & Sovereign Infrastructure"
   },
   {
@@ -71,9 +71,9 @@ const COMPANY_VENTURES = [
 ];
 
 const DIRECT_LINES = [
-  { city: "Dubai", country: "United Arab Emirates", flag: "🇦🇪", tz: "Asia/Dubai", tzCode: "GST", number: "+971 50 960 1323", raw: "+971509601323", primary: true },
+  { city: "Dubai", country: "United Arab Emirates", flag: "🇦🇪", tz: "Asia/Dubai", tzCode: "GST", number: "+971 58 646 4119", raw: "+971586464119", primary: true },
   { city: "Doha", country: "Qatar", flag: "🇶🇦", tz: "Asia/Qatar", tzCode: "AST", number: "+974 3396 1119", raw: "+97433961119", primary: false },
-  { city: "Beirut", country: "Lebanon", flag: "🇱🇧", tz: "Asia/Beirut", tzCode: "EET", number: "+961 79 139 129", raw: "+96179139129", primary: false },
+  { city: "Beirut", country: "Lebanon", flag: "🇱🇧", tz: "Asia/Beirut", tzCode: "EET", summer: { offset: "GMT+3", tzCode: "EEST" }, number: "+961 79 139 129", raw: "+96179139129", primary: false },
   { city: "Istanbul", country: "Turkey", flag: "🇹🇷", tz: "Europe/Istanbul", tzCode: "TRT", number: "+90 538 849 9119", raw: "+905388499119", primary: false },
   { city: "Khartoum", country: "Sudan", flag: "🇸🇩", tz: "Africa/Khartoum", tzCode: "CAT", number: "+249 99 195 9595", raw: "+249991959595", primary: false }
 ];
@@ -113,6 +113,15 @@ function toggleTheme() {
 // 3. LIVE WORLD CLOCKS
 // ==========================================
 
+// Lebanon observes daylight saving time, so its label changes with the season
+function getTimezoneCode(line, date) {
+  if (!line.summer) return line.tzCode;
+  const part = new Intl.DateTimeFormat('en-US', { timeZone: line.tz, timeZoneName: 'shortOffset' })
+    .formatToParts(date)
+    .find(p => p.type === 'timeZoneName');
+  return part && part.value === line.summer.offset ? line.summer.tzCode : line.tzCode;
+}
+
 function updateWorldClocks() {
   DIRECT_LINES.forEach((line, index) => {
     const el = document.getElementById(`tz-clock-${index}`);
@@ -126,7 +135,7 @@ function updateWorldClocks() {
         hour12: true
       });
       const timeStr = formatter.format(now);
-      el.textContent = `${timeStr} (${line.tzCode})`;
+      el.textContent = `${timeStr} (${getTimezoneCode(line, now)})`;
     } catch (e) {
       el.textContent = line.tzCode;
     }
@@ -193,9 +202,10 @@ function downloadExecutiveVCard() {
     'VERSION:3.0',
     'N:Chakik;Ahmad;;Mr.;',
     'FN:Ahmad Chakik',
-    'ORG:Opal World Technologies;Opal Strategic Partners;Opal SG;Opal Mining Co Ltd;Opal Trading Qatar;Opal Management Turkey;Opal Group',
+    // Semicolons in ORG mean departments of one company, so the ventures go in NOTE
+    'ORG:Opal Group',
     'TITLE:Chairman',
-    'TEL;TYPE=CELL,VOICE,PREF:+971509601323',
+    'TEL;TYPE=CELL,VOICE,PREF:+971586464119',
     'TEL;TYPE=WORK,VOICE:+97433961119',
     'TEL;TYPE=WORK,VOICE:+96179139129',
     'TEL;TYPE=WORK,VOICE:+905388499119',
@@ -206,8 +216,8 @@ function downloadExecutiveVCard() {
     'URL;TYPE=SAUDI:https://opal-sp.com',
     'URL;TYPE=TURKEY:https://tr.opal-gp.com/',
     'ADR;TYPE=WORK:;;Office Suite;Dubai;Dubai;;United Arab Emirates',
-    'NOTE:Chairman & Prominent International Business Leader across Mining, Technology, Advisory, and Sovereign Infrastructure.',
-    'X-SOCIALPROFILE;type=whatsapp:https://wa.me/971509601323',
+    'NOTE:Chairman & Prominent International Business Leader across Mining\\, Technology\\, Advisory\\, and Sovereign Infrastructure.\\nVentures: Opal World Technologies\\, Opal Strategic Partners\\, Opal SG\\, Opal Mining Co Ltd\\, Opal Trading Qatar\\, Opal Management Turkey',
+    'X-SOCIALPROFILE;type=whatsapp:https://wa.me/971586464119',
     'REV:' + new Date().toISOString(),
     'END:VCARD'
   ].join('\r\n');
@@ -235,13 +245,11 @@ function openQrModal() {
   if (!modal || !qrContainer) return;
 
   const currentUrl = window.location.href.split('#')[0];
-  // Generate clean high-resolution QR via high-availability QR SVG API with fallback
-  qrContainer.innerHTML = `
-    <img src="https://api.qrserver.com/v1/create-qr-code/?size=240x240&data=${encodeURIComponent(currentUrl)}&margin=1" 
-         alt="Executive QR Code" 
-         class="w-full h-full object-contain"
-         onerror="this.onerror=null; this.src='https://chart.googleapis.com/chart?cht=qr&chs=240x240&chl=${encodeURIComponent(currentUrl)}';" />
-  `;
+  try {
+    qrContainer.innerHTML = QrCode.svg(currentUrl);
+  } catch (err) {
+    qrContainer.textContent = 'QR code unavailable for this link';
+  }
 
   document.getElementById('qrPageUrl').textContent = currentUrl;
   openModal('qrModal');
@@ -265,25 +273,46 @@ function shareProfile() {
 // 8. MODAL CONTROLLERS
 // ==========================================
 
+let lastFocused = null;
+
 function openModal(id) {
   const modal = document.getElementById(id);
-  if (modal) {
-    modal.classList.add('active');
-    document.body.style.overflow = 'hidden';
-  }
+  if (!modal) return;
+  lastFocused = document.activeElement;
+  modal.classList.add('active');
+  document.body.style.overflow = 'hidden';
+  const closeBtn = modal.querySelector('.modal-close-btn');
+  if (closeBtn) closeBtn.focus();
 }
 
 function closeModal(id) {
   const modal = document.getElementById(id);
-  if (modal) {
-    modal.classList.remove('active');
-    document.body.style.overflow = '';
-  }
+  if (!modal || !modal.classList.contains('active')) return;
+  modal.classList.remove('active');
+  document.body.style.overflow = '';
+  if (lastFocused) lastFocused.focus({ preventScroll: true });
+  lastFocused = null;
 }
 
 function closeAllModals() {
-  document.querySelectorAll('.modal-backdrop').forEach(m => m.classList.remove('active'));
-  document.body.style.overflow = '';
+  document.querySelectorAll('.modal-backdrop.active').forEach(m => closeModal(m.id));
+}
+
+// Keep Tab inside the open dialog
+function trapFocus(e) {
+  const modal = document.querySelector('.modal-backdrop.active');
+  if (!modal) return;
+  const items = [...modal.querySelectorAll('a[href], button')];
+  const first = items[0];
+  const last = items[items.length - 1];
+  const inside = modal.contains(document.activeElement);
+  if (e.shiftKey && (!inside || document.activeElement === first)) {
+    e.preventDefault();
+    last.focus();
+  } else if (!e.shiftKey && (!inside || document.activeElement === last)) {
+    e.preventDefault();
+    first.focus();
+  }
 }
 
 // Modal Backdrop Click
@@ -293,9 +322,15 @@ window.addEventListener('click', (e) => {
   }
 });
 
-// ESC Key Listener
+// Keyboard Listener
 window.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') closeAllModals();
+  if (e.key === 'Tab') trapFocus(e);
+  // Enter / Space activate the clickable cards
+  if ((e.key === 'Enter' || e.key === ' ') && e.target.matches('[role="button"]')) {
+    e.preventDefault();
+    e.target.click();
+  }
 });
 
 // ==========================================
@@ -312,8 +347,11 @@ function openCompanyModal(index) {
   document.getElementById('companyModalDesc').textContent = venture.description;
   
   const logoImg = document.getElementById('companyModalLogo');
+  logoImg.onerror = () => {
+    logoImg.onerror = null;
+    logoImg.src = venture.fallbackLogo;
+  };
   logoImg.src = venture.logo;
-  logoImg.onerror = () => { logoImg.src = venture.fallbackLogo; };
 
   const webBtn = document.getElementById('companyModalWebBtn');
   webBtn.href = venture.website;
@@ -326,7 +364,7 @@ function openCompanyModal(index) {
 // ==========================================
 
 function openCallSelector(number) {
-  const targetNumber = number || '+971 50 960 1323';
+  const targetNumber = number || '+971 58 646 4119';
   const cleanNumber = targetNumber.replace(/[^\d+]/g, '');
 
   document.getElementById('modalCallCellularBtn').href = `tel:${cleanNumber}`;
@@ -368,10 +406,12 @@ function toggleBio() {
   const isExpanded = content.classList.contains('expanded');
   if (isExpanded) {
     content.classList.remove('expanded');
+    btn.setAttribute('aria-expanded', 'false');
     textSpan.textContent = 'Read Full Biography';
     icon.style.transform = 'rotate(0deg)';
   } else {
     content.classList.add('expanded');
+    btn.setAttribute('aria-expanded', 'true');
     textSpan.textContent = 'Collapse Biography';
     icon.style.transform = 'rotate(180deg)';
   }

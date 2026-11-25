@@ -16,10 +16,10 @@ A bespoke, ultra-modern executive digital card and conglomerate hub built for **
   - Direct Cellular Call (`tel:`)
   - Instant WhatsApp Chat (`wa.me`)
   - Instant Copy Phone Number with floating toast feedback
-- **Enriched vCard 3.0 Generation (`.vcf`)**: One-click download with full name, title, multiple organizations, 5 international phone numbers, email, websites, and bio notes.
+- **Enriched vCard 3.0 Generation (`.vcf`)**: One-click download with full name, title, organization, 5 international phone numbers, email, websites, and bio notes.
 - **Interactive QR Code Generator**: Generates an instant high-resolution QR code modal for rapid in-person networking from any smartphone camera.
 - **Conglomerate Portfolio Modals**: Interactive detail cards for Opal World Tech, Opal SP, Opal SG, Opal Mining, Opal Trading Qatar, and Opal Management Turkey.
-- **Zero-Build Architecture**: 100% vanilla HTML5, CSS3, and modern JavaScript. Deploys instantly to GitHub Pages with zero compilation steps or external dependencies.
+- **Zero-Build Architecture**: 100% vanilla HTML5, CSS3, and modern JavaScript. Deploys instantly to GitHub Pages with zero compilation steps and no libraries (fonts load from Google Fonts).
 
 ---
 
@@ -30,6 +30,7 @@ chakik-card/
 ├── index.html           # Main semantic HTML structure & metadata
 ├── styles.css           # Custom design system, glassmorphism & themes
 ├── script.js            # Live clocks, modals, vCard generator & theme logic
+├── qr.js                # Local QR code generator
 ├── assets/              # Local optimized assets
 │   ├── avatar.jpg       # Ahmad Chakik executive portrait
 │   ├── award.jpg        # Global Recognition ceremony
@@ -70,11 +71,12 @@ Follow either **Method 1 (via Web Browser — Easiest, No Git Command Line Neede
 #### Step 2: Upload Your Project Files
 1. On your newly created repository screen, click the link that says **"uploading an existing file"** (or click **Add file** → **Upload files**).
 2. Open Windows File Explorer and navigate to this folder:  
-   `d:\Work\vibe-code-projects\chakik-card`
+   `d:\Work\ai-coding-projects\OPAL\chakik-card`
 3. Drag and drop all the following items into the GitHub upload area:
    - `index.html`
    - `styles.css`
    - `script.js`
+   - `qr.js`
    - `README.md`
    - The entire `assets` folder (containing `avatar.jpg`, `award.jpg`, `leadership.jpg`, and all company logos)
 4. At the bottom of the upload page:
@@ -105,7 +107,7 @@ If you prefer using Git in PowerShell:
 
 ```bash
 # 1. Open terminal in the project directory
-cd d:\Work\vibe-code-projects\chakik-card
+cd d:\Work\ai-coding-projects\OPAL\chakik-card
 
 # 2. Initialize Git
 git init
